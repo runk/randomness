@@ -4,7 +4,7 @@ const gamma = (n: number): number => calcGamma(n) as number;
 
 // 6.5.31 Handbook of Mathematical Functions, page 263
 //    Recursive implementation
-export const upper_incomplete_gamma = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
+const upper_incomplete_gamma = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
   if (d == iterations) {
     if ((d % 2) == 1) {
       return 1
@@ -27,7 +27,7 @@ export const upper_incomplete_gamma = (a: number, x: number, d: number = 0, iter
 
 // 6.5.31 Handbook of Mathematical Functions, page 263
 //    Recursive implementation
-export const upper_incomplete_gamma2 = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
+const upper_incomplete_gamma2 = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
   if (d == iterations)
     return 1
   if (d == 0)
@@ -38,7 +38,7 @@ export const upper_incomplete_gamma2 = (a: number, x: number, d: number = 0, ite
   return (m - a) + x + ((d * (a - d)) / (upper_incomplete_gamma2(a, x, d = d + 1)))
 }
 
-export const lower_incomplete_gamma = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
+const lower_incomplete_gamma = (a: number, x: number, d: number = 0, iterations: number = 100): number => {
   if (d == iterations) {
     if ((d % 2) == 1) {
       return 1  // end iterations
@@ -61,15 +61,15 @@ export const lower_incomplete_gamma = (a: number, x: number, d: number = 0, iter
   }
 }
 
-const lower_incomplete_gamma2 = (a: number, x: number): number =>
-  gamma(a) - upper_incomplete_gamma2(a, x)
+// const lower_incomplete_gamma2 = (a: number, x: number): number =>
+//   gamma(a) - upper_incomplete_gamma2(a, x)
 
-const complimentary_incomplete_gamma = (a: number, x: number): number =>
-  1 - upper_incomplete_gamma(a, x)
+// const complimentary_incomplete_gamma = (a: number, x: number): number =>
+//   1 - upper_incomplete_gamma(a, x)
 
 
-const gammainc = (a: number, x: number): number =>
-  lower_incomplete_gamma(a, x) / gamma(a)
+// const gammainc = (a: number, x: number): number =>
+//   lower_incomplete_gamma(a, x) / gamma(a)
 
-const gammaincc = (a: number, x: number): number =>
+export const gammaincc = (a: number, x: number): number =>
   upper_incomplete_gamma(a, x) / gamma(a)
