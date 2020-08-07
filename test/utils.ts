@@ -9,5 +9,5 @@ export const getData = (filename: string): Bit[] => {
   for (let index = 0; index < buf.length; index++) {
     str += buf[index].toString(2).padStart(8, '0');
   }
-  return str.split('').map(piece => piece === one ? 1 : 0);
-}
+  return str.split('').map((piece) => (piece === one ? 1 : 0));
+};

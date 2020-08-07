@@ -5,7 +5,7 @@ describe('frequency within block test', () => {
   const tests = [
     {
       file: 'megabitrand.bin',
-      expect: [true, 0.12282637574855537, null]
+      expect: [true, 0.12282637574855537, null],
     },
     // {
     //   file: 'sums_megrandom.bin',
@@ -21,9 +21,9 @@ describe('frequency within block test', () => {
     // },
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(test.file, () => {
-      expect(tester(getData(test.file))).toEqual(test.expect)
-    })
+      expect(tester(getData(test.file))).toEqual(test.expect);
+    });
   });
 });

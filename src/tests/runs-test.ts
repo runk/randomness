@@ -10,23 +10,26 @@ import { getCounts } from './utils';
  * for a random sequence. In particular, this test determines whether the oscillation between such zeros and ones is too fast or too slow.
  */
 export default (bits: Bit[], alpha = 0.01): Result => {
-  const n = bits.length
-  const [zeroes, ones] = getCounts(bits)
+  const n = bits.length;
+  const [zeroes, ones] = getCounts(bits);
 
-  const prop = ones / n;
+  const proportion = ones / n;
 
-  const tau = 2 / Math.sqrt(n)
+  const tau = 2 / Math.sqrt(n);
 
-  if (Math.abs(prop - 0.5) > tau)
-    return [false, 0, null];
+  if (Math.abs(proportion - 0.5) > tau) return [false, 0, null];
 
   let observedRuns = 1;
   for (let i = 0; i < bits.length; i++) {
-    if (bits[i] != bits[i + 1])
-      observedRuns += 1;
+    if (bits[i] != bits[i + 1]) observedRuns += 1;
   }
 
-  const p = 1 - erf(Math.abs(observedRuns - (2 * n * prop * (1 - prop))) / (2 * Math.sqrt(2 * n) * prop * (1 - prop)))
-  const success = (p >= alpha)
+  const p =
+    1 -
+    erf(
+      Math.abs(observedRuns - 2 * n * proportion * (1 - proportion)) /
+        (2 * Math.sqrt(2 * n) * proportion * (1 - proportion))
+    );
+  const success = p >= alpha;
   return [success, p, null];
-}
+};

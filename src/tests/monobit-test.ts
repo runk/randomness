@@ -8,15 +8,15 @@ import { getCounts } from './utils';
  * whether the number of ones and zeros in a sequence are approximately the same as would be expected for a truly random sequence.
  * The test assesses the closeness of the fraction of ones to 1/2, that is, the number of ones and zeroes in a sequence
  * should be about the same.
-*/
+ */
 export default (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
-  const [zeroes, ones] = getCounts(bits)
-  const s = Math.abs(ones - zeroes);
+  const [zeroes, ones] = getCounts(bits);
+  const difference = Math.abs(ones - zeroes);
 
-  const p = 1 - erf(s / (Math.sqrt(n) * Math.sqrt(2.0)))
+  const p = 1 - erf(difference / (Math.sqrt(n) * Math.sqrt(2.0)));
 
-  const success = (p >= alpha)
-  return [success, p, null]
-}
+  const success = p >= alpha;
+  return [success, p, null];
+};

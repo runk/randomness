@@ -1,2 +1,1 @@
-
-export default () => console.log('hi')
+export default () => console.log('hi');
