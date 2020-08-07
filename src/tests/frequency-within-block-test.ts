@@ -1,4 +1,4 @@
-import { gammaincc } from '../gamma';
+import { gammaincc } from '../utils/gamma';
 import { Result, Bit } from '../types';
 import { getCounts } from './utils';
 

@@ -4,6 +4,7 @@
   "description": "Randomness tests",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest"
@@ -16,7 +17,10 @@
     "random",
     "nist",
     "randomness",
-    "entropy"
+    "entropy",
+    "nistspecialpublication800-22r1a",
+    "800-22r1a",
+    "sp800_22"
   ],
   "author": "Dmitry Shirokov <deadrunk@gmail.com>",
   "license": "MIT",
