@@ -1,5 +1,5 @@
 import tester from './longest-run-ones-in-a-block-test';
-import { getData } from '../../test/utils';
+import { getData } from '../test/utils';
 
 describe('frequency within block test', () => {
   const tests = [

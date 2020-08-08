@@ -40,6 +40,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "@astuanax/funmatrix": "^1.0.4",
     "@types/mathjs": "^6.0.5",
     "mathjs": "^7.1.0"
   }

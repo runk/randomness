@@ -1,6 +1,6 @@
 import { erf } from 'mathjs';
 import { Result, Bit } from '../types';
-import { getCounts } from './utils';
+import { getCounts } from '../utils/counter';
 
 /**
  * Monobit test as described in NIST paper: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf

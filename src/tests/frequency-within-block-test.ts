@@ -1,6 +1,6 @@
 import { gammaincc } from '../utils/gamma';
 import { Result, Bit } from '../types';
-import { getCounts } from './utils';
+import { getCounts } from '../utils/counter';
 
 const defaultBlockSize = 20;
 const blockNumberMax = 100;

@@ -1,13 +1,15 @@
 import fs from 'fs';
 import path from 'path';
-import { Bit } from '../src/types';
+import { Bit } from '../types';
 
 const one = '1';
 const cache: Record<string, Bit[]> = {};
 export const getData = (filename: string): Bit[] => {
   if (cache[filename]) return cache[filename];
 
-  const buf = fs.readFileSync(path.join(__dirname, 'data', filename));
+  const buf = fs.readFileSync(
+    path.join(__dirname, '../../resources/data', filename)
+  );
   let str = '';
   for (let index = 0; index < buf.length; index++) {
     str += buf[index].toString(2).padStart(8, '0');

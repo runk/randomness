@@ -1,5 +1,5 @@
 import runs from './runs-test';
-import { getData } from '../../test/utils';
+import { getData } from '../test/utils';
 
 describe('runs test', () => {
   const tests = [

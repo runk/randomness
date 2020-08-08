@@ -1,5 +1,5 @@
 import monobit from './monobit-test';
-import { getData } from '../../test/utils';
+import { getData } from '../test/utils';
 
 describe('monobit test', () => {
   const tests = [
