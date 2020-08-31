@@ -1,0 +1,83 @@
+import { erf } from 'mathjs';
+import { Result, Bit } from '../types';
+import { getCounts } from '../utils/counter';
+
+/**
+ * Discrete Fourier transform (spectral) test as described in NIST paper: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf
+ * The focus of this test is the peak heights in the Discrete Fourier Transform of the sequence.
+ * The purpose of this test is to detect periodic features (i.e., repetitive patterns that are near each other) in the
+ * tested sequence that would indicate a deviation from the assumption of randomness.
+ * The intention is to detect whether the number of peaks exceeding the 95% threshold is significantly different than 5%.
+ */
+export default (bits: Bit[], alpha = 0.01): Result => {
+  const n = bits.length;
+
+  if ((n % 2) == 1)        // Make it an even number
+      bits = bits.slice(0, n - 1);
+
+  const ts = []             // Convert to +1,-1
+
+  for (let bit of bits) {
+      ts.push((bit*2)-1)
+  }
+
+  const ts_np = numpy.array(ts)
+  const fs = numpy.fft.fft(ts_np)  // Compute DFT
+
+  // if sys.version_info > (3,0):
+  //     mags = abs(fs)[:n//2] // Compute magnitudes of first half of sequence
+  // else:
+  //     mags = abs(fs)[:n/2]  // Compute magnitudes of first half of sequence
+
+
+  const T = Math.sqrt(Math.log(1.0/0.05)*n) // Compute upper threshold
+  const N0 = 0.95*n/2.0
+  console.log("  N0 = %f", N0)
+
+  let N1 = 0.0   // Count the peaks above the upper threshold
+  for (let mag of mags) {
+      if (mag < T)
+          N1 += 1.0
+  }
+  console.log("  N1 = %f", N1)
+  const d = (N1 - N0)/Math.sqrt((n*0.95*0.05)/4) // Compute the P value
+  const p = 1 - erf(Math.abs(d)/Math.sqrt(2))
+
+  const success = (p >= alpha)
+  return [success,p,null]
+};
+
+
+/*
+def dft_test(bits):
+    n = len(bits)
+    if (n % 2) == 1:        # Make it an even number
+        bits = bits[:-1]
+
+    ts = list()             # Convert to +1,-1
+    for bit in bits:
+        ts.append((bit*2)-1)
+
+    ts_np = numpy.array(ts)
+    fs = numpy.fft.fft(ts_np)  # Compute DFT
+
+    if sys.version_info > (3,0):
+        mags = abs(fs)[:n//2] # Compute magnitudes of first half of sequence
+    else:
+        mags = abs(fs)[:n/2] # Compute magnitudes of first half of sequence
+
+    T = math.sqrt(math.log(1.0/0.05)*n) # Compute upper threshold
+    N0 = 0.95*n/2.0
+    print("  N0 = %f" % N0)
+
+    N1 = 0.0   # Count the peaks above the upper theshold
+    for mag in mags:
+        if mag < T:
+            N1 += 1.0
+    print("  N1 = %f" % N1)
+    d = (N1 - N0)/math.sqrt((n*0.95*0.05)/4) # Compute the P value
+    p = math.erfc(abs(d)/math.sqrt(2))
+
+    success = (p >= 0.01)
+    return (success,p,null)
+ */
