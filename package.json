@@ -42,6 +42,7 @@
   "dependencies": {
     "@astuanax/funmatrix": "^1.0.4",
     "@types/mathjs": "^6.0.5",
+    "fft-js": "0.0.12",
     "mathjs": "^7.1.0"
   }
 }

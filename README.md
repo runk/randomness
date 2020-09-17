@@ -18,6 +18,8 @@ All tests based on [NIST](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecia
 
 Currently following randomness tests supported:
 
+- `dftTest`: Discrete Fourier transform (spectral) test. The focus of this test is the peak heights in the Discrete Fourier Transform of the sequence. The purpose of this test is to detect periodic features (i.e., repetitive patterns that are near each other) in the tested sequence that would indicate a deviation from the assumption of randomness. The intention is to detect whether the number of peaks exceeding the 95% threshold is significantly different than 5%.
+
 - `monoBitTest`: Monobit test. The focus of the test is the proportion of zeroes and ones for the entire sequence. The purpose of this test is to determine whether the number of ones and zeros in a sequence are approximately the same as would be expected for a truly random sequence. The test assesses the closeness of the fraction of ones to 1/2, that is, the number of ones and zeroes in a sequence should be about the same.
 
 - `frequencyWithinBlockTest`: Frequency within block test. The focus of the test is the proportion of ones within M-bit blocks. The purpose of this test is to determine whether the frequency of ones in an M-bit block is approximately M/2, as would be expected under an assumption of randomness. For block size M=1, this test degenerates to the Frequency (Monobit) test.
