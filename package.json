@@ -1,8 +1,8 @@
 {
   "name": "randomness",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Randomness tests",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",

@@ -1,5 +1,5 @@
 import { erf } from 'mathjs';
-import { Result, Bit } from '../types';
+import { Result, Bit, RandomnessTest } from '../types';
 import { getCounts } from '../utils/counter';
 
 /**
@@ -9,7 +9,7 @@ import { getCounts } from '../utils/counter';
  * The test assesses the closeness of the fraction of ones to 1/2, that is, the number of ones and zeroes in a sequence
  * should be about the same.
  */
-export default (bits: Bit[], alpha = 0.01): Result => {
+const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   const [zeroes, ones] = getCounts(bits);
@@ -20,3 +20,5 @@ export default (bits: Bit[], alpha = 0.01): Result => {
   const success = p >= alpha;
   return [success, p, null];
 };
+
+export default test;

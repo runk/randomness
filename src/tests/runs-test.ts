@@ -1,5 +1,5 @@
 import { erf } from 'mathjs';
-import { Result, Bit } from '../types';
+import { Result, Bit, RandomnessTest } from '../types';
 import { getCounts } from '../utils/counter';
 
 /**
@@ -9,7 +9,7 @@ import { getCounts } from '../utils/counter';
  * The purpose of the runs test is to determine whether the number of runs of ones and zeros of various lengths is as expected
  * for a random sequence. In particular, this test determines whether the oscillation between such zeros and ones is too fast or too slow.
  */
-export default (bits: Bit[], alpha = 0.01): Result => {
+const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
   const [zeroes, ones] = getCounts(bits);
 
@@ -33,3 +33,5 @@ export default (bits: Bit[], alpha = 0.01): Result => {
   const success = p >= alpha;
   return [success, p, null];
 };
+
+export default test;
