@@ -49,7 +49,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   // Compute score (P-value) applying the lower incomplete gamma function
   const p = gammaincc(totalBlocks / 2, chiSquare / 2);
   const success = p >= alpha;
-  return [success, p, null];
+  return [success, p];
 };
 
 export default test;

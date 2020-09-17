@@ -1,4 +1,4 @@
-export type Result = [boolean, number, null];
+export type Result = [boolean, number];
 
 export type Bit = 0 | 1;
 

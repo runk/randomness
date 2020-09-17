@@ -18,7 +18,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const p = 1 - erf(difference / (Math.sqrt(n) * Math.sqrt(2.0)));
 
   const success = p >= alpha;
-  return [success, p, null];
+  return [success, p];
 };
 
 export default test;

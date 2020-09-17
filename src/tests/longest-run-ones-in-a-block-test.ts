@@ -26,7 +26,7 @@ const probabilities = (blockSize: number, index: number) => {
 const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
-  if (n < 128) return [false, 1, null];
+  if (n < 128) return [false, 1];
 
   let blockSize = 10000;
   if (n < 6272) {
@@ -105,7 +105,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const p = gammaincc(K / 2, chiSquare / 2);
 
   const success = p >= alpha;
-  return [success, p, null];
+  return [success, p];
 };
 
 export default test;

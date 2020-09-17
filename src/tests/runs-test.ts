@@ -17,7 +17,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
 
   const tau = 2 / Math.sqrt(n);
 
-  if (Math.abs(proportion - 0.5) > tau) return [false, 0, null];
+  if (Math.abs(proportion - 0.5) > tau) return [false, 0];
 
   let observedRuns = 1;
   for (let i = 0; i < bits.length; i++) {
@@ -31,7 +31,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
         (2 * Math.sqrt(2 * n) * proportion * (1 - proportion))
     );
   const success = p >= alpha;
-  return [success, p, null];
+  return [success, p];
 };
 
 export default test;
