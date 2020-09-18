@@ -3,7 +3,9 @@
   "version": "1.2.0",
   "description": "Randomness tests",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",

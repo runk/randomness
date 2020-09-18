@@ -75,13 +75,13 @@ const lowerIncompleteGamma = (
 };
 
 export const lowerIncompleteGamma2 = (a: number, x: number): number =>
-  gamma(a) - upperIncompleteGamma2(a, x)
+  gamma(a) - upperIncompleteGamma2(a, x);
 
 export const complimentaryIncompleteGamma = (a: number, x: number): number =>
-  1 - upperIncompleteGamma(a, x)
+  1 - upperIncompleteGamma(a, x);
 
 export const gammainc = (a: number, x: number): number =>
-  lowerIncompleteGamma(a, x) / gamma(a)
+  lowerIncompleteGamma(a, x) / gamma(a);
 
 export const gammaincc = (a: number, x: number): number =>
   upperIncompleteGamma(a, x) / gamma(a);
