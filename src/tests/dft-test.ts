@@ -1,7 +1,6 @@
 import { erf } from 'mathjs';
 import { Result, Bit, RandomnessTest } from '../types';
-// @ts-ignore
-import fft from 'fft-js';
+import fft, { Phasors } from 'fft-js';
 
 /**
  * Discrete Fourier transform (spectral) test as described in NIST paper: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf
@@ -20,7 +19,8 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
     ts.push(bits[i] * 2 - 1);
   }
 
-  const fs: number[] = fft.fft(ts); // Compute DFT
+  // Compute DFT and magnitudes
+  const fs: Phasors = fft.fft(ts);
   const magnitudes: number[] = fft.util.fftMag(fs);
 
   // Compute upper threshold
