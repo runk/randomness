@@ -11,7 +11,7 @@ import { getCounts } from '../utils/counter';
  */
 const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
-  const [zeroes, ones] = getCounts(bits);
+  const [_zeroes, ones] = getCounts(bits);
 
   const proportion = ones / n;
 

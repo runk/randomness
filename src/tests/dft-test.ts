@@ -1,6 +1,5 @@
 import { erf } from 'mathjs';
 import { Result, Bit, RandomnessTest } from '../types';
-import { getCounts } from '../utils/counter';
 // @ts-ignore
 import fft from 'fft-js';
 

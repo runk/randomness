@@ -36,7 +36,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const proportions = [];
   for (let i = 0; i < totalBlocks; i++) {
     const block = bits.slice(i * blockSize, (i + 1) * blockSize);
-    const [_, ones] = getCounts(block);
+    const [_zeros, ones] = getCounts(block);
     proportions.push(ones / blockSize);
   }
 

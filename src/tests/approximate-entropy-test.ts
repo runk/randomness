@@ -4,7 +4,6 @@ import { gammaincc } from '../utils/gamma';
 const bitsToInt = (bits: number[]): number => {
   let theint = 0;
   for (let i = 0; i < bits.length; i++) {
-    const element = bits[i];
     theint = (theint << 1) + bits[i];
   }
   return theint;
@@ -62,7 +61,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   // Step 7 - Compute p-value
   const p = gammaincc(2 ** (m - 1), chiSquare / 2.0);
 
-  const success = p >= 0.01;
+  const success = p >= alpha;
   return [success, p];
 };
 
