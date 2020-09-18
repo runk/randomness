@@ -1,6 +1,6 @@
 {
   "name": "randomness",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Randomness tests",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "entropy",
     "nistspecialpublication800-22r1a",
     "800-22r1a",
-    "sp800_22"
+    "sp800_22",
+    "test"
   ],
   "author": "Dmitry Shirokov <deadrunk@gmail.com>",
   "license": "MIT",
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/runk/randomness#readme",
   "devDependencies": {
     "@types/jest": "^26.0.9",
+    "@types/mathjs": "^6.0.5",
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
@@ -41,7 +43,6 @@
   },
   "dependencies": {
     "@astuanax/funmatrix": "^1.0.4",
-    "@types/mathjs": "^6.0.5",
     "fft-js": "0.0.12",
     "mathjs": "^7.1.0"
   }
