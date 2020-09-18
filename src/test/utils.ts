@@ -6,7 +6,9 @@ const fromString = (str: string): Bit[] =>
   str.split('').map((piece) => (piece === one ? 1 : 0));
 
 const one = '1';
+
 const cache: Record<string, Bit[]> = {};
+
 export const getData = (filename: string): Bit[] => {
   if (cache[filename]) return cache[filename];
 
@@ -31,3 +33,5 @@ export const getData = (filename: string): Bit[] => {
 
   throw new Error('Unsupported extension');
 };
+
+export const round = (n: number, precision = 6): number => Number(n.toFixed(precision));
