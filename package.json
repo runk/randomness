@@ -1,6 +1,6 @@
 {
   "name": "randomness",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Randomness tests",
   "main": "lib/index.js",
   "files": [
@@ -10,11 +10,12 @@
     "build": "tsc",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/runk/randomness.git"
+    "url": "https://github.com/runk/randomness.git"
   },
   "keywords": [
     "random",
@@ -42,7 +43,8 @@
     "jest": "^26.2.2",
     "prettier": "^2.0.5",
     "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "semantic-release": "^17.1.2"
   },
   "dependencies": {
     "@astuanax/funmatrix": "^1.0.4",
