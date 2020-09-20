@@ -19,6 +19,10 @@ describe('monobit test', () => {
       file: 'biased_megabitrand.bin',
       expect: [false, 0],
     },
+    {
+      file: 'reference.txt',
+      expect: [true, 0.10959858339911599],
+    },
   ];
 
   tests.forEach((test) => {

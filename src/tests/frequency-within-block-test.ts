@@ -2,7 +2,7 @@ import { gammaincc } from '../utils/gamma';
 import { Result, Bit, RandomnessTest } from '../types';
 import { getCounts } from '../utils/counter';
 
-const defaultBlockSize = 20;
+const defaultBlockSize = 10;
 const blockNumberMax = 100;
 const sequenceSizeMin = 100;
 

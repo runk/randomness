@@ -5,7 +5,7 @@ describe('runs test', () => {
   const tests = [
     {
       file: 'megabitrand.bin',
-      expect: [true, 0.24598212153176013],
+      expect: [true, 0.24677807212400715],
     },
     {
       file: 'sums_megrandom.bin',
@@ -18,6 +18,10 @@ describe('runs test', () => {
     {
       file: 'biased_megabitrand.bin',
       expect: [false, 0],
+    },
+    {
+      file: 'reference.txt',
+      expect: [true, 0.5007979178870902 ],
     },
   ];
 
