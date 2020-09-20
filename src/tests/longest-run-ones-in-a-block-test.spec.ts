@@ -19,6 +19,10 @@ describe('frequency within block test', () => {
       file: 'biased_megabitrand.bin',
       expect: [false, 3.630579471788652e-119],
     },
+    {
+      file: 'reference-128.txt',
+      expect: [true, 0.18059797678555825],
+    },
   ];
 
   tests.forEach((test) => {
