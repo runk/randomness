@@ -34,4 +34,5 @@ export const getData = (filename: string): Bit[] => {
   throw new Error('Unsupported extension');
 };
 
-export const round = (n: number, precision = 6): number => Number(n.toFixed(precision));
+export const round = (n: number, precision = 6): number =>
+  Number(n.toFixed(precision));

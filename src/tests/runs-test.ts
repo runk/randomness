@@ -27,7 +27,7 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
     1 -
     erf(
       Math.abs(observedRuns - 2 * n * proportion * (1 - proportion)) /
-      (2 * Math.sqrt(2 * n) * proportion * (1 - proportion))
+        (2 * Math.sqrt(2 * n) * proportion * (1 - proportion))
     );
   const success = p >= alpha;
   return [success, p];

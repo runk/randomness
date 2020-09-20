@@ -21,7 +21,7 @@ describe('frequency within block test', () => {
     },
     {
       file: 'reference.txt',
-      expect: [true, 0.7064384496412814 ],
+      expect: [true, 0.7064384496412814],
     },
   ];
 

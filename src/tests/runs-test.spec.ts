@@ -21,7 +21,7 @@ describe('runs test', () => {
     },
     {
       file: 'reference.txt',
-      expect: [true, 0.5007979178870902 ],
+      expect: [true, 0.5007979178870902],
     },
   ];
 
