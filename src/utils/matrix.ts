@@ -113,7 +113,6 @@ const find_unit_element_and_swap = (
   A: Matrix
 ): number => {
   let index: number;
-  let row_op: number = 0;
 
   if (flag == MATRIX_FORWARD_ELIMINATION) {
     index = i + 1;
@@ -125,11 +124,11 @@ const find_unit_element_and_swap = (
     if (index >= 0) return swap_rows(i, index, Q, A);
   }
 
-  return row_op;
+  return 0;
 };
 
 const swap_rows = (i: number, index: number, Q: number, A: Matrix): number => {
-  let temp: any;
+  let temp: number;
   for (let p = 0; p < Q; p++) {
     temp = A[i][p];
     A[i][p] = A[index][p];
