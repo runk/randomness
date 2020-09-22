@@ -1,4 +1,5 @@
 import approximateEntropyTest from './tests/approximate-entropy-test';
+import binaryMatrixRankTest from './tests/binary-matrix-rank-test';
 import dftTest from './tests/dft-test';
 import frequencyWithinBlockTest from './tests/frequency-within-block-test';
 import longestRunOnesInABlockTest from './tests/longest-run-ones-in-a-block-test';
@@ -9,6 +10,7 @@ import { RandomnessTest } from './types';
 
 const tests: Record<string, RandomnessTest> = {
   approximateEntropyTest,
+  binaryMatrixRankTest,
   dftTest,
   frequencyWithinBlockTest,
   longestRunOnesInABlockTest,

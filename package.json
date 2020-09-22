@@ -47,7 +47,6 @@
     "semantic-release": "^17.1.2"
   },
   "dependencies": {
-    "@astuanax/funmatrix": "^1.0.4",
     "fft-js": "0.0.12",
     "mathjs": "^7.1.0"
   }
