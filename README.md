@@ -14,9 +14,17 @@ console.log(randomness.monobitTest(data));
 
 ### Reference
 
-All tests based on [NIST](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf) paper.
+All tests return the same type of result:
 
-Currently following randomness tests supported:
+```typescript
+type Result = [test: boolean, pValue: number]
+```
+
+- First element is a result of test evaluation - whether sequence is random or not. When `p-value ≥ alpha` (alpha is 0.01 by default), accept the sequence as random.
+- Second element is the `p-value` itself.
+
+
+#### Supported randomness tests
 
 - `approximateEntropyTest`: Approximate entropy test. As with the Serial test, the focus of this test is the frequency of all possible overlapping m-bit patterns across the entire sequence. The purpose of the test is to compare the frequency of overlapping blocks of two consecutive/adjacent lengths (m and m+1) against the expected result for a random sequence.
 
