@@ -1,7 +1,7 @@
 import tester from './binary-matrix-rank-test';
 import { getData } from '../test/utils';
 
-describe('binary matrix rank test test', () => {
+describe('binary matrix rank test', () => {
   const tests = [
     {
       file: 'megabitrand.bin',
