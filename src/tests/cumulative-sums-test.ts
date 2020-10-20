@@ -63,8 +63,8 @@ const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   }
 
   // Step 4
-  let pForward = pValue(n, forwardMax);
-  let pBackward = pValue(n, backwardMax);
+  const pForward = pValue(n, forwardMax);
+  const pBackward = pValue(n, backwardMax);
 
   const success = pForward >= alpha && pBackward >= alpha;
   return [success, Math.min(pForward, pBackward), [pForward, pBackward]];
