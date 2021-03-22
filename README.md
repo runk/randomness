@@ -23,12 +23,13 @@ type Result = [test: boolean, pValue: number]
 - First element is a result of test evaluation - whether sequence is random or not. When `p-value ≥ alpha` (alpha is 0.01 by default), accept the sequence as random.
 - Second element is the `p-value` itself.
 
-
 #### Supported randomness tests
 
 - `approximateEntropyTest`: Approximate entropy test. As with the Serial test, the focus of this test is the frequency of all possible overlapping m-bit patterns across the entire sequence. The purpose of the test is to compare the frequency of overlapping blocks of two consecutive/adjacent lengths (m and m+1) against the expected result for a random sequence.
 
 - `binaryMatrixRankTest`: Binary matrix rank test. The focus of the test is the rank of disjoint sub-matrices of the entire sequence. The purpose of this test is to check for linear dependence among fixed length substrings of the original sequence.
+
+- `cumulativeSumsTest`: Cumulative sums test. The focus of this test is the maximal excursion (from zero) of the random walk defined by the cumulative sum of adjusted (-1, +1) digits in the sequence. The purpose of the test is to determine whether the cumulative sum of the partial sequences occurring in the tested sequence is too large or too small relative to the expected behaviour of that cumulative sum for random sequences. This cumulative sum may be considered as a random walk. For a random sequence, the excursions of the random walk should be near zero. For certain types of non-random sequences, the excursions of this random walk from zero will be large.
 
 - `dftTest`: Discrete Fourier transform (spectral) test. The focus of this test is the peak heights in the Discrete Fourier Transform of the sequence. The purpose of this test is to detect periodic features (i.e., repetitive patterns that are near each other) in the tested sequence that would indicate a deviation from the assumption of randomness. The intention is to detect whether the number of peaks exceeding the 95% threshold is significantly different than 5%.
 
