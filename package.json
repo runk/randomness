@@ -35,7 +35,6 @@
   "homepage": "https://github.com/runk/randomness#readme",
   "devDependencies": {
     "@types/jest": "26.0.23",
-    "@types/mathjs": "9.4.1",
     "@types/node": "14.17.2",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.26.0",
@@ -48,6 +47,6 @@
   },
   "dependencies": {
     "fft-js": "0.0.12",
-    "mathjs": "^9.0.0"
+    "mathjs": "9.4.2"
   }
 }
