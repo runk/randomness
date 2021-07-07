@@ -47,6 +47,6 @@
   },
   "dependencies": {
     "fft-js": "0.0.12",
-    "mathjs": "9.4.3"
+    "mathjs": "9.4.4"
   }
 }
