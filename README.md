@@ -17,7 +17,7 @@ console.log(randomness.monobitTest(data));
 All tests return the same type of result:
 
 ```typescript
-type Result = [test: boolean, pValue: number]
+type Result = [test: boolean, pValue: number];
 ```
 
 - First element is a result of test evaluation - whether sequence is random or not. When `p-value ≥ alpha` (alpha is 0.01 by default), accept the sequence as random.
