@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/runk/randomness#readme",
   "devDependencies": {
-    "@types/node": "16.11.41",
+    "@types/node": "16.11.45",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
     "ava": "4.3.0",
