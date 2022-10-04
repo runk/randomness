@@ -38,7 +38,7 @@
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
     "ava": "4.3.3",
-    "eslint": "8.20.0",
+    "eslint": "8.24.0",
     "prettier": "2.7.1",
     "semantic-release": "19.0.3",
     "ts-node": "10.9.1",
