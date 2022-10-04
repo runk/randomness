@@ -8,14 +8,14 @@
     "declaration": true,
     "diagnostics": true,
     "esModuleInterop": true,
-    "extendedDiagnostics": true,
+    "extendedDiagnostics": false,
     "listEmittedFiles": true,
     "module": "commonjs",
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "lib": ["ES2019"],
-    "target": "ES2019",
+    "lib": ["ES2022"],
+    "target": "ES2022",
     "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "exclude": [

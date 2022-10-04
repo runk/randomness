@@ -9,7 +9,6 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "ava",
     "semantic-release": "semantic-release"
   },
@@ -35,10 +34,7 @@
   "homepage": "https://github.com/runk/randomness#readme",
   "devDependencies": {
     "@types/node": "16.11.45",
-    "@typescript-eslint/eslint-plugin": "5.30.7",
-    "@typescript-eslint/parser": "5.30.7",
     "ava": "4.3.3",
-    "eslint": "8.20.0",
     "prettier": "2.7.1",
     "semantic-release": "19.0.5",
     "ts-node": "10.9.1",
