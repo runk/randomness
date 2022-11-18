@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "fft-js": "0.0.12",
-    "mathjs": "11.3.3"
+    "mathjs": "11.4.0"
   },
   "ava": {
     "extensions": [
