@@ -38,7 +38,7 @@
     "prettier": "3.1.0",
     "semantic-release": "22.0.8",
     "ts-node": "10.9.1",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "dependencies": {
     "fft-js": "0.0.12",
