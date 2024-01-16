@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/runk/randomness#readme",
   "devDependencies": {
-    "@types/node": "20.11.3",
+    "@types/node": "20.11.4",
     "ava": "6.0.1",
     "prettier": "3.2.2",
     "semantic-release": "23.0.0",
