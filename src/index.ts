@@ -7,9 +7,9 @@ import longestRunOnesInABlockTest from './tests/longest-run-ones-in-a-block-test
 import monobitTest from './tests/monobit-test';
 import runsTest from './tests/runs-test';
 
-import { RandomnessTest } from './types';
+import { RandomnessTest, TestName } from './types';
 
-const tests: Record<string, RandomnessTest> = {
+const tests: Record<TestName, RandomnessTest> = {
   approximateEntropyTest,
   binaryMatrixRankTest,
   cumulativeSumsTest,
