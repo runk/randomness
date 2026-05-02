@@ -1,5 +1,5 @@
 import { erf } from 'mathjs';
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import fft, { Phasors } from 'fft-js';
 
 /**
@@ -9,7 +9,7 @@ import fft, { Phasors } from 'fft-js';
  * tested sequence that would indicate a deviation from the assumption of randomness.
  * The intention is to detect whether the number of peaks exceeding the 95% threshold is significantly different than 5%.
  */
-const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
+const test: InternalRandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   const ts: number[] = [];

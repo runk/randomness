@@ -1,7 +1,7 @@
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import { computeRank, bitsToMatrix } from '../utils/matrix';
 
-const test: RandomnessTest = (
+const test: InternalRandomnessTest = (
   bits: Bit[],
   M = 32,
   Q = 32,
