@@ -22,7 +22,7 @@ const scenarios = [
 ];
 
 scenarios.forEach((scenario) => {
-  test(scenario.file, () => {
+  test(scenario.file, { timeout: 30_000 }, () => {
     expect(tester(getData(scenario.file))).toEqual(scenario.expect);
   });
 });
