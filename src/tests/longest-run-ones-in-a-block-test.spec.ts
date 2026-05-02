@@ -1,4 +1,4 @@
-import test from 'ava';
+import { expect, test } from 'vitest';
 import tester from './longest-run-ones-in-a-block-test';
 import { getData } from '../test/utils';
 
@@ -26,7 +26,7 @@ const scenarios = [
 ];
 
 scenarios.forEach((scenario) => {
-  test(scenario.file, (t) => {
-    t.deepEqual(tester(getData(scenario.file)), scenario.expect);
+  test(scenario.file, () => {
+    expect(tester(getData(scenario.file))).toEqual(scenario.expect);
   });
 });

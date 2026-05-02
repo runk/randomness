@@ -1,4 +1,4 @@
-import test from 'ava';
+import { expect, test } from 'vitest';
 import runs from './runs-test';
 import { getData } from '../test/utils';
 
@@ -26,7 +26,7 @@ const scenarios = [
 ];
 
 scenarios.forEach((scenario) => {
-  test(scenario.file, (t) => {
-    t.deepEqual(runs(getData(scenario.file)), scenario.expect);
+  test(scenario.file, () => {
+    expect(runs(getData(scenario.file))).toEqual(scenario.expect);
   });
 });
