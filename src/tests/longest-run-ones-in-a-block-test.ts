@@ -1,4 +1,4 @@
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import { gammaincc } from '../utils/gamma';
 
 const M8 = [0.2148, 0.3672, 0.2305, 0.1875];
@@ -23,7 +23,7 @@ const probabilities = (blockSize: number, index: number) => {
  * of ones implies that there is also an irregularity in the expected length of the longest run of zeroes.
  * Therefore, only a test for ones is necessary.
  */
-const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
+const test: InternalRandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   if (n < 128) return [false, 1];

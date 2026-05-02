@@ -1,5 +1,5 @@
 import { gammaincc } from '../utils/gamma';
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import { getCounts } from '../utils/counter';
 
 const defaultBlockSize = 10;
@@ -12,7 +12,7 @@ const sequenceSizeMin = 100;
  * ones in an M-bit block is approximately M/2, as would be expected under an assumption of randomness.
  * For block size M=1, this test degenerates to the Frequency (Monobit) test.
  */
-const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
+const test: InternalRandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   if (n < sequenceSizeMin) {

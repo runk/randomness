@@ -1,4 +1,4 @@
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import { erf } from 'mathjs';
 
 const normcdf = (n: number) => 0.5 * (1 - erf(-n * Math.sqrt(0.5)));
@@ -36,7 +36,7 @@ const pValue = (n: number, z: number) => {
  * be near zero. For certain types of non-random sequences, the excursions of this random walk from zero will be large.
  * The significance value of the test is 0.01.
  */
-const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
+const test: InternalRandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   // Step 1

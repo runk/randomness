@@ -1,4 +1,4 @@
-import { Result, Bit, RandomnessTest } from '../types';
+import { Result, Bit, InternalRandomnessTest } from '../types';
 import { gammaincc } from '../utils/gamma';
 
 const bitsToInt = (bits: number[]): number => {
@@ -15,7 +15,7 @@ const bitsToInt = (bits: number[]): number => {
  * The purpose of the test is to compare the frequency of overlapping blocks of two consecutive/adjacent lengths (m and m+1) against the
  * expected result for a random sequence.
  */
-const test: RandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
+const test: InternalRandomnessTest = (bits: Bit[], alpha = 0.01): Result => {
   const n = bits.length;
 
   // Define the block length in a range bounded by 2 and 3

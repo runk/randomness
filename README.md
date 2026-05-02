@@ -12,6 +12,32 @@ const data = [0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, ...];
 console.log(randomness.monobitTest(data));
 ```
 
+Supported input shapes for every test method:
+
+- `Bit[]` where each value is `0` or `1`.
+- `Uint8Array` where each byte is expanded to 8 bits.
+- `Buffer` (Node.js) where each byte is expanded to 8 bits.
+
+When bytes are used (`Uint8Array` or `Buffer`), bits are read in big-endian bit order within each byte (most-significant bit first). For example, byte `0xB2` is interpreted as `10110010`.
+
+Examples:
+
+```typescript
+import randomness from 'randomness';
+
+// 1) Bit array input
+const bits = [1, 0, 1, 1, 0, 0, 1, 0] as const;
+console.log(randomness.monobitTest([...bits]));
+
+// 2) Uint8Array input
+const bytes = Uint8Array.from([0xb2, 0x0f]);
+console.log(randomness.runsTest(bytes));
+
+// 3) Buffer input (Node.js)
+const buffer = Buffer.from([0xb2, 0x0f]);
+console.log(randomness.dftTest(buffer));
+```
+
 ### Reference
 
 All tests return the same type of result:
