@@ -8,7 +8,9 @@ const referenceFile = path.join(__dirname, '../resources/data/reference.txt');
 const referenceText = fs.readFileSync(referenceFile, 'utf-8').trim();
 
 // reference.txt is a string of '0'/'1' characters
-const referenceBitArray: Bit[] = referenceText.split('').map((c: string) => (c === '1' ? 1 : 0));
+const referenceBitArray: Bit[] = referenceText
+  .split('')
+  .map((c: string) => (c === '1' ? 1 : 0));
 
 // Pack the bit string into a Buffer (MSB-first per byte)
 const referenceBuffer: Buffer = (() => {
