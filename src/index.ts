@@ -44,4 +44,7 @@ const tests: Record<TestName, RandomnessTest> = {
   runsTest: wrap(runsTest),
 };
 
-export default tests;
+// Keep the previous .default entry point for existing CommonJS consumers.
+const randomness = { ...tests, default: tests };
+
+export = randomness;

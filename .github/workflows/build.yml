@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
+      # npm 10 bundled with Node 22 crashes resolving dependencies (edgesOut).
+      - name: Use npm 11 on Node.js 22
+        if: matrix.node-version == '22.x'
+        run: npm install --global npm@11
       - run: npm i
       - run: npm test
       - run: npm run build
